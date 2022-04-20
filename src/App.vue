@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @digit="doSearch" />
     <Main :filmList="filmList" :seriesList="seriesList" />
-    <button @click="searchFunction"></button>
+    <button @click="searchFunction">
+      INSERISCI UNA PAROLA IN CERCA E CLICCA
+    </button>
   </div>
 </template>
 
@@ -14,23 +16,38 @@ import axios from "axios";
 export default {
   name: "App",
 
+  components: {
+    Header,
+    Main,
+  },
+
   data() {
     return {
       filmList: [],
       seriesList: [],
-      query: "verde",
+      query: "",
       searching: false,
       apiUrl: "https://api.themoviedb.org/3/search/",
       apiKey: "7b0221641cd6cccd42ea4445b3c56e3d",
     };
   },
 
-  components: {
-    Header,
-    Main,
+  computed: {
+    filteredFilms() {
+      const textToSearch = this.query.toLowerCase().trim();
+      if (!textToSearch) {
+        return this.filmList;
+      }
+      return filmList.filter((film) => {
+        return film.name.toLowerCase().includes(textToSearch);
+      });
+    },
   },
 
   methods: {
+    doSearch(text) {
+      this.query = text;
+    },
     searchFunction() {
       if (this.query.length > 0 && !this.searching) {
         this.loadApi("tv").then((response) => {

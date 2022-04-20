@@ -1,12 +1,13 @@
 <template>
   <div>
+    <h2>Series</h2>
     <Seriessection
       v-for="series in seriesList"
       :key="series.id"
       :series="series"
     />
+    <h2>Film</h2>
     <Filmsection v-for="film in filmList" :key="film.id" :film="film" />
-    <button @click="consolelog">consolelog</button>
   </div>
 </template>
 
@@ -23,12 +24,6 @@ export default {
   components: {
     Filmsection,
     Seriessection,
-  },
-  methods: {
-    consolelog() {
-      console.log(this.seriesList);
-      console.log(this.filmList);
-    },
   },
 };
 </script>

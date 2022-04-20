@@ -2,8 +2,13 @@
   <div id="header">
     <h1>BOOLFLIX</h1>
     <div id="search-box">
-      <input type="text" />
-      <button>cerca</button>
+      <input
+        type="text"
+        v-model="searchedWord"
+        placeholder="Ricerca Film o Serie Tv"
+        @keyup.enter="search"
+      />
+      <button @click="search">cerca</button>
     </div>
   </div>
 </template>
@@ -11,6 +16,16 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      searchedWord: "",
+    };
+  },
+  methods: {
+    search() {
+      this.$emit("digit", this.searchedWord);
+    },
+  },
 };
 </script>
 

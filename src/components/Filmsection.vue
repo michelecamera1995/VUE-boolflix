@@ -1,6 +1,6 @@
 <template>
   <div id="film-section">
-    <h2>Film</h2>
+    <img src="" alt="" />
     <div class="card">{{ film.title }}</div>
   </div>
 </template>

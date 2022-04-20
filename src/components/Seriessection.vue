@@ -1,6 +1,5 @@
 <template>
   <div id="series-section">
-    <h2>Series</h2>
     <div class="card">{{ series.name }}</div>
   </div>
 </template>
