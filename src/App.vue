@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Main />
+    <Main :filmList="filmList" :seriesList="seriesList" />
     <button @click="searchFunction"></button>
   </div>
 </template>
@@ -34,12 +34,12 @@ export default {
     searchFunction() {
       if (this.query.length > 0 && !this.searching) {
         this.loadApi("tv").then((response) => {
-          this.seriesList = response.data;
-          console.log(this.seriesList);
+          this.seriesList = response.data.results;
+          //console.log(this.seriesList);
         });
         this.loadApi("movie").then((response) => {
-          this.filmList = response.data;
-          console.log(this.filmList);
+          this.filmList = response.data.results;
+          //console.log(this.filmList);
         });
       }
     },
