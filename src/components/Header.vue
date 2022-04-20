@@ -2,8 +2,8 @@
   <div id="header">
     <h1>BOOLFLIX</h1>
     <div id="search-box">
-      <input type="text" />
-      <button>ciao</button>
+      <input type="text" v-model="query" />
+      <button>cerca</button>
     </div>
   </div>
 </template>
@@ -11,6 +11,14 @@
 <script>
 export default {
   name: "Header",
+
+  data: {
+    return: {
+      query: "",
+    },
+  },
+
+  methods: {},
 };
 </script>
 
