@@ -19,8 +19,9 @@ export default {
       filmList: [],
       seriesList: [],
       query: "verde",
+      searching: false,
       apiUrl: "https://api.themoviedb.org/3/search/",
-      apiKey: "666c9fe2f4201bb1e9afd43e01e7c534",
+      apiKey: "7b0221641cd6cccd42ea4445b3c56e3d",
     };
   },
 
@@ -30,21 +31,36 @@ export default {
   },
 
   methods: {
+    searchFunction() {
+      if (this.query.length > 0 && !this.searching) {
+        this.loadApi("tv").then((response) => {
+          this.seriesList = response.data;
+          console.log(this.seriesList);
+        });
+        this.loadApi("movie").then((response) => {
+          this.filmList = response.data;
+          console.log(this.filmList);
+        });
+      }
+    },
+
     loadApi(type) {
-      const settings = {
+      this.searching = true;
+      const params = {
         api_key: this.apiKey,
         query: this.query,
+        language: "it-IT",
       };
-      axios
-        .get(this.apiUrl + type, { settings })
-        .then(({ response }) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      return axios.get(this.apiUrl + type, { params }).catch((error) => {
+        console.log(error);
+      });
     },
-    searchFunction() {
+
+    queryTvSeries() {
+      this.loadApi("tv");
+    },
+
+    queryMovies() {
       this.loadApi("movie");
     },
   },
