@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h2>Series</h2>
-    <Seriessection
-      v-for="series in seriesList"
-      :key="series.id"
-      :series="series"
-    />
-    <h2>Film</h2>
-    <Filmsection v-for="film in filmList" :key="film.id" :film="film" />
+    <div id="series-section">
+      <h2>Series</h2>
+      <Seriessection
+        v-for="series in seriesList"
+        :key="series.id"
+        :series="series"
+      />
+    </div>
+    <div id="film-section">
+      <h2>Film</h2>
+      <Filmsection v-for="film in filmList" :key="film.id" :film="film" />
+    </div>
   </div>
 </template>
 
@@ -29,4 +33,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#film-section {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  h2 {
+    width: 100%;
+  }
+}
+#series-section {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  height: 100%;
+  h2 {
+    width: 100%;
+  }
+}
 </style>

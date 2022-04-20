@@ -32,18 +32,6 @@ export default {
     };
   },
 
-  computed: {
-    filteredFilms() {
-      const textToSearch = this.query.toLowerCase().trim();
-      if (!textToSearch) {
-        return this.filmList;
-      }
-      return filmList.filter((film) => {
-        return film.name.toLowerCase().includes(textToSearch);
-      });
-    },
-  },
-
   methods: {
     doSearch(text) {
       this.query = text;
@@ -52,11 +40,11 @@ export default {
       if (this.query.length > 0 && !this.searching) {
         this.loadApi("tv").then((response) => {
           this.seriesList = response.data.results;
-          //console.log(this.seriesList);
+          console.log(this.seriesList);
         });
         this.loadApi("movie").then((response) => {
           this.filmList = response.data.results;
-          //console.log(this.filmList);
+          console.log(this.filmList);
         });
       }
     },

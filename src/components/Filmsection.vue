@@ -1,7 +1,12 @@
 <template>
-  <div id="film-section">
+  <div div class="card">
     <img src="" alt="" />
-    <div class="card">{{ film.title }}</div>
+    <div>
+      <h3>{{ film.title }}</h3>
+      <h3>{{ film.original_title }}</h3>
+      <h3>{{ film.original_language }}</h3>
+      <h3>{{ film.vote_average }}</h3>
+    </div>
   </div>
 </template>
 
@@ -15,13 +20,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#film-section {
-  width: 100%;
-  display: flex;
-  height: 100%;
-  .card {
-    width: 10%;
-    height: 50px;
-  }
+.card {
+  padding: 10px;
+  line-height: 20px;
+  margin: 2%;
+  border: 1px solid black;
+  width: 10%;
+  font-size: 0.7rem;
+  height: 200px;
 }
 </style>
