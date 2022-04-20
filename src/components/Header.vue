@@ -21,7 +21,7 @@ export default {
   align-items: center;
   padding: 1%;
   color: red;
-  background-color: grey;
+  background-color: black;
   #search-box {
   }
 }

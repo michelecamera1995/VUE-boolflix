@@ -55,6 +55,6 @@ export default {
 body {
   width: 1200px;
   margin: 0 auto;
-  background-color: black;
+  background-color: grey;
 }
 </style>
