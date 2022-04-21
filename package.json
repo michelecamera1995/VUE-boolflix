@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@fontsource/angkor": "^4.5.6",
+    "@fontsource/comic-mono": "^4.5.3",
     "axios": "^0.26.1",
     "core-js": "^3.8.3",
     "language-flag-colors": "^2.0.4",

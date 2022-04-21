@@ -40,11 +40,11 @@ export default {
   padding: 10px;
   line-height: 20px;
   margin: 2%;
-  border: 1px solid black;
-  width: 25%;
-  font-size: 0.9rem;
+  border: 1px solid red;
+  width: 20%;
+  font-size: 0.8rem;
   color: white;
-  height: 400px;
+  height: 350px;
   background-color: black;
 }
 </style>

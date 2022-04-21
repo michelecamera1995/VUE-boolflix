@@ -9,6 +9,7 @@
 import Main from "@/components/Main.vue";
 import Header from "@/components/Header.vue";
 import axios from "axios";
+import "@fontsource/comic-mono";
 
 export default {
   name: "App",
@@ -71,6 +72,7 @@ export default {
   box-sizing: border-box;
 }
 body {
+  font-family: "Comic Mono", monospace;
   width: 1200px;
   margin: 0 auto;
   background-color: grey;

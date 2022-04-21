@@ -34,15 +34,21 @@ export default {
 
 <style lang="scss" scoped>
 #film-section {
+  background-color: darkgray;
   padding: 3%;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   h2 {
+    text-align: center;
+    color: red;
     width: 100%;
+    background: black;
+    border: 1px solid red;
   }
 }
 #series-section {
+  background-color: darkgray;
   padding: 3%;
   display: flex;
   width: 100%;
@@ -50,7 +56,11 @@ export default {
   display: flex;
   height: 100%;
   h2 {
+    text-align: center;
+    color: red;
     width: 100%;
+    background: black;
+    border: 1px solid red;
   }
 }
 </style>
