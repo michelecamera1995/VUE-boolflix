@@ -40,9 +40,11 @@ export default {
       axios
         .get(this.apiUrl + "movie", { params })
         .then((response) => {
-          this.filmList = response.data.results;
-          this.searching = false;
-          console.log(this.filmList);
+          if (searchedWord > 0 && !this.searching) {
+            this.filmList = response.data.results;
+            this.searching = false;
+            console.log(this.filmList);
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -50,9 +52,11 @@ export default {
       axios
         .get(this.apiUrl + "tv", { params })
         .then((response) => {
-          this.seriesList = response.data.results;
-          this.searching = false;
-          console.log(this.seriesList);
+          if (searchedWord > 0 && !this.searching) {
+            this.seriesList = response.data.results;
+            this.searching = false;
+            console.log(this.seriesList);
+          }
         })
         .catch((error) => {
           console.log(error);
