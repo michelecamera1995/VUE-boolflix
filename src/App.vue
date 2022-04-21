@@ -31,13 +31,13 @@ export default {
   methods: {
     loadApi(searchedWord) {
       //console.log(searchedWord);
-      this.searching = true;
       const params = {
         api_key: this.apiKey,
         query: searchedWord,
         language: "it-IT",
       };
-      if (searchedWord > 0 && !this.searching) {
+      if (searchedWord !== "" && !this.searching) {
+        this.searching = true;
         axios
           .get(this.apiUrl + "movie", { params })
           .then((response) => {
