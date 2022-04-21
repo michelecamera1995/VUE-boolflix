@@ -25,8 +25,9 @@ export default {
   line-height: 20px;
   margin: 2%;
   border: 1px solid black;
-  width: 10%;
-  font-size: 0.7rem;
-  height: 200px;
+  width: 15%;
+  font-size: 0.9rem;
+  height: 250px;
+  background-color: white;
 }
 </style>

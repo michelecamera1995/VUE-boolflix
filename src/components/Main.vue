@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 #film-section {
+  padding: 3%;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -42,6 +43,7 @@ export default {
   }
 }
 #series-section {
+  padding: 3%;
   display: flex;
   width: 100%;
   flex-wrap: wrap;

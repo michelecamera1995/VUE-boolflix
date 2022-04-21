@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     search() {
-      this.$emit("digit", this.searchedWord);
+      this.$emit("search", this.searchedWord);
     },
   },
 };
