@@ -37,30 +37,28 @@ export default {
         query: searchedWord,
         language: "it-IT",
       };
-      axios
-        .get(this.apiUrl + "movie", { params })
-        .then((response) => {
-          if (searchedWord > 0 && !this.searching) {
+      if (searchedWord > 0 && !this.searching) {
+        axios
+          .get(this.apiUrl + "movie", { params })
+          .then((response) => {
             this.filmList = response.data.results;
             this.searching = false;
             console.log(this.filmList);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      axios
-        .get(this.apiUrl + "tv", { params })
-        .then((response) => {
-          if (searchedWord > 0 && !this.searching) {
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        axios
+          .get(this.apiUrl + "tv", { params })
+          .then((response) => {
             this.seriesList = response.data.results;
             this.searching = false;
             console.log(this.seriesList);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
   },
 };
