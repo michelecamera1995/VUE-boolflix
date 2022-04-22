@@ -16,19 +16,24 @@
 </template>
 
 <script>
+
 import Filmsection from "@/components/Filmsection.vue";
 import Seriessection from "@/components/Seriessection.vue";
 
 export default {
+
   name: "Main",
+
   props: {
     seriesList: Array,
     filmList: Array,
   },
+
   components: {
     Filmsection,
     Seriessection,
   },
+  
 };
 </script>
 

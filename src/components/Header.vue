@@ -15,17 +15,21 @@
 
 <script>
 export default {
+
   name: "Header",
+
   data() {
     return {
       searchedWord: "",
     };
   },
+
   methods: {
     search() {
       this.$emit("search", this.searchedWord);
     },
   },
+  
 };
 </script>
 

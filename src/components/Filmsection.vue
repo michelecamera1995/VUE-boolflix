@@ -12,15 +12,19 @@
 
 <script>
 export default {
+
   name: "Filmsection",
+
   data() {
     return {
       imgUrl: "",
     };
   },
+
   props: {
     film: Object,
   },
+
   methods: {
     getImgUrl() {
       const url = "https://image.tmdb.org/t/p/w200" + this.film.poster_path;
@@ -32,6 +36,7 @@ export default {
       return urlFlag;
     },
   },
+  
 };
 </script>
 

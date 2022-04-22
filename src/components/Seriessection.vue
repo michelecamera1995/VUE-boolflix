@@ -12,21 +12,27 @@
 
 <script>
 export default {
+
   name: "Seriessection",
+
   props: {
     series: Object,
   },
+
   methods: {
     getImgUrl() {
       const url = "https://image.tmdb.org/t/p/w200" + this.series.poster_path;
       return url;
     },
+
     getFlag() {
       console.log(this.getFlag)
       const urlFlag = "https://www.kidlink.org/icons/f0-" + this.series.original_language + ".gif";
       return urlFlag;
     },
+
   },
+  
 };
 </script>
 
