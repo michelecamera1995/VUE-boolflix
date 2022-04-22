@@ -30,11 +30,13 @@ export default {
       const url = "https://image.tmdb.org/t/p/w200" + this.film.poster_path;
       return url;
     },
+
     getFlag() {
       console.log(this.getFlag)
       const urlFlag = "https://www.kidlink.org/icons/f0-" + this.film.original_language + ".gif";
       return urlFlag;
     },
+    
   },
   
 };
