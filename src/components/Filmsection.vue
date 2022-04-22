@@ -1,12 +1,14 @@
 <template>
-  <div div class="card">
+  <div div class="card" @mouseover="isHovered = true" @mouseleave="isHovered = false">
     <div>
-      <img :src="getImgUrl(film)" alt="" />
-      <h3>{{ film.title }}</h3>
-      <h3>{{ film.original_title }}</h3>
-      <img class="flag" :src="getFlag(film)" alt="">
-      <p v-if="this.imgFlag">{{ film.original_language }}</p>
-      <h3>{{ film.vote_average }}</h3>
+      <img :src="getImgUrl(film)" alt="" v-show="!isHovered" />
+      <div v-show="isHovered">
+        <h3 class="pad">{{ film.title }}</h3>
+        <h3 class="pad">{{ film.original_title }}</h3>
+        <img class="flag pad" :src="getFlag(film)" alt="">
+        <p class="pad" v-if="this.imgFlag">{{ film.original_language }}</p>
+        <h3 class="pad">{{ film.vote_average }}</h3>
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +20,7 @@ export default {
 
   data() {
     return {
+      isHovered : false,
       imgFlag: false,
     };
   },
@@ -48,21 +51,22 @@ export default {
 <style lang="scss" scoped>
 .card {
   img {
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
   }
-  .flag{
+   .flag{
     width: 25px;
   }
   text-align: center;
   padding: 10px;
   line-height: 20px;
   margin: 2%;
-  border: 1px solid red;
   width: 20%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
-  height: 350px;
-  background-color: black;
+  height: 312px;
+}
+.pad{
+  padding-top: 10%;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 #film-section {
-  background-color: darkgray;
+  background-color: rgb(0, 0, 0);
   padding: 3%;
   display: flex;
   width: 100%;
@@ -54,7 +54,7 @@ export default {
   }
 }
 #series-section {
-  background-color: darkgray;
+  background-color: rgb(0, 0, 0);
   padding: 3%;
   display: flex;
   width: 100%;
