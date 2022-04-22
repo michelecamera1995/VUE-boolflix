@@ -27,6 +27,7 @@ export default {
   },
 
   methods: {
+
     getImgUrl() {
       const url = "https://image.tmdb.org/t/p/w200" + this.film.poster_path;
       return url;
@@ -35,12 +36,10 @@ export default {
     getFlag() {
       const urlFlag = "https://www.kidlink.org/icons/f0-" + this.film.original_language + ".gif";
       if(this.film.original_language === 'en'){
-        console.log(this.imgFlag)
         return this.imgFlag=true;
       }
         return urlFlag
-    },
-    
+    },   
   },
   
 };

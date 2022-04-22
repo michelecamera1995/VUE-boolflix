@@ -34,12 +34,10 @@ export default {
     getFlag() {
       const urlFlag = "https://www.kidlink.org/icons/f0-" + this.series.original_language + ".gif";
       if(this.series.original_language === 'en' ){
-        console.log(this.imgFlag)
         return this.imgFlag=true;
       }
       return urlFlag;
     },
-
   },
   
 };
