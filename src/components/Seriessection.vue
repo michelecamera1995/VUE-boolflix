@@ -4,7 +4,7 @@
       <img :src="getImgUrl(series)" alt="" />
       <h3>{{ series.name }}</h3>
       <h3>{{ series.original_name }}</h3>
-      <img class="flag" :src="getFlag(film)" alt="">
+      <img class="flag" :src="getFlag(series)" alt="">
       <h3>{{ series.vote_average }}</h3>
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
     },
     getFlag() {
       console.log(this.getFlag)
-      const urlFlag = "https://www.kidlink.org/icons/f0-" + this.film.original_language + ".gif";
+      const urlFlag = "https://www.kidlink.org/icons/f0-" + this.series.original_language + ".gif";
       return urlFlag;
     },
   },
