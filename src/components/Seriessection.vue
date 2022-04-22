@@ -37,7 +37,7 @@ export default {
   margin: 2%;
   border: 1px solid red;
   width: 20%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
   height: 350px;
   background-color: black;
