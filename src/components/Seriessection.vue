@@ -4,7 +4,7 @@
       <img :src="getImgUrl(series)" alt="" />
       <h3>{{ series.name }}</h3>
       <h3>{{ series.original_name }}</h3>
-      <h3>{{ series.original_language }}</h3>
+      <img class="flag" :src="getFlag(film)" alt="">
       <h3>{{ series.vote_average }}</h3>
     </div>
   </div>
@@ -21,6 +21,11 @@ export default {
       const url = "https://image.tmdb.org/t/p/w200" + this.series.poster_path;
       return url;
     },
+    getFlag() {
+      console.log(this.getFlag)
+      const urlFlag = "https://www.kidlink.org/icons/f0-" + this.film.original_language + ".gif";
+      return urlFlag;
+    },
   },
 };
 </script>
@@ -30,6 +35,9 @@ export default {
   img {
     width: 70%;
     height: 70%;
+  }
+   .flag{
+    width: 25px;
   }
   text-align: center;
   padding: 10px;
