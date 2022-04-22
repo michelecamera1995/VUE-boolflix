@@ -5,6 +5,7 @@
       <h3>{{ film.title }}</h3>
       <h3>{{ film.original_title }}</h3>
       <img class="flag" :src="getFlag(film)" alt="">
+      <p v-if="this.imgFlag">{{ film.original_language }}</p>
       <h3>{{ film.vote_average }}</h3>
     </div>
   </div>
@@ -17,7 +18,7 @@ export default {
 
   data() {
     return {
-      imgUrl: "",
+      imgFlag: false,
     };
   },
 
@@ -32,9 +33,12 @@ export default {
     },
 
     getFlag() {
-      console.log(this.getFlag)
       const urlFlag = "https://www.kidlink.org/icons/f0-" + this.film.original_language + ".gif";
-      return urlFlag;
+      if(this.film.original_language === 'en'){
+        console.log(this.imgFlag)
+        return this.imgFlag=true;
+      }
+        return urlFlag
     },
     
   },

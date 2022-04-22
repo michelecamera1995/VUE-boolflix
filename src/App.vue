@@ -31,7 +31,6 @@ export default {
 
   methods: {
     loadApi(searchedWord) {
-      //console.log(searchedWord);
       const params = {
         api_key: this.apiKey,
         query: searchedWord,
@@ -39,22 +38,28 @@ export default {
       };
       if (searchedWord !== "" && !this.searching) {
         this.searching = true;
+
+      //Load movie api
+
         axios
           .get(this.apiUrl + "movie", { params })
           .then((response) => {
             this.filmList = response.data.results;
             this.searching = false;
-            console.log(this.filmList);
+            //console.log(this.filmList);
           })
           .catch((error) => {
             console.log(error);
           });
+
+       //Load series tv api
+
         axios
           .get(this.apiUrl + "tv", { params })
           .then((response) => {
             this.seriesList = response.data.results;
             this.searching = false;
-            console.log(this.seriesList);
+            //console.log(this.seriesList);
           })
           .catch((error) => {
             console.log(error);
@@ -62,6 +67,7 @@ export default {
       }
     },
   },
+
 };
 </script>
 

@@ -19,6 +19,12 @@ export default {
     series: Object,
   },
 
+  data() {
+    return {
+      imgFlag: false,
+    };
+  },
+
   methods: {
     getImgUrl() {
       const url = "https://image.tmdb.org/t/p/w200" + this.series.poster_path;
@@ -26,8 +32,11 @@ export default {
     },
 
     getFlag() {
-      console.log(this.getFlag)
       const urlFlag = "https://www.kidlink.org/icons/f0-" + this.series.original_language + ".gif";
+      if(this.series.original_language === 'en' ){
+        console.log(this.imgFlag)
+        return this.imgFlag=true;
+      }
       return urlFlag;
     },
 

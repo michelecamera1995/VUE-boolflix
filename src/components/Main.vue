@@ -45,6 +45,7 @@ export default {
   width: 100%;
   flex-wrap: wrap;
   h2 {
+    padding: 2%;
     text-align: center;
     color: red;
     width: 100%;
@@ -61,6 +62,7 @@ export default {
   display: flex;
   height: 100%;
   h2 {
+    padding: 2%;
     text-align: center;
     color: red;
     width: 100%;
